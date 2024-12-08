@@ -9,17 +9,58 @@ body {
    margin-left: 30px;
    margin-right: 30px;
 }
+div {
+    background-color : rgb(240, 244, 246);
+    background-size : 400ㅔx 400px;
+    background-image : url("media/spongebob.png");
+   	background-repeat : repeat-y;
+    background-position : center center;
+}
+div {
+	width : 200px;
+	height : 200px; 
+	color : rgb(243, 23, 195);
+	font-size : 16px;
+}
 table caption {
    color: white; 
 }
+table { /* 이중 테두리 제거 */
+	border-collapse : collapse; 
+}
+td, th { /* 모든 셀에 적용 */
+	text-align : left;
+	padding : 5px;
+	height : 15px;
+	width : 100px;
+}
+thead, tfoot { /* <thead>의 모든 셀에 적용 */
+	background : rgb(3, 64, 143);
+	color : rgb(245, 245, 239);
+}
+tbody tr:nth-child(even) { /* 짝수 <tr>에 적용*/
+	background : aliceblue;
+}
+tbody tr:hover { /* 마우스가 올라오면 pink 배경 */
+	background : pink;	
+}
+@keyframes bomb {
+  from { font-size : 500%;}
+  to { font-size : 100%;}
+}
+h3 {
+	animation-name : bomb;
+	animation-duration : 3s;
+	animation-iteration-count : infinite;
 </style>
 </head>
 <body>
 <img src="김미경.jpg" alt="김미경 사진" width="300" height="300">
- <hr>
+ <hr><div>
      <ol type="A">
         <li>이름 : 김미경 </li>
-        <li>학과 : <a href="https://futureplus.hansung.ac.kr/ko/department/stroke" target="_blank">융합행정학과</a></li>
+        <li>학과 : <a href="javascript:if(confirm('이동하시겠습니까?')) { window.location.href = 'https://futureplus.hansung.ac.kr/ko/department/stroke'; }">융합행정학과</a>
+        </li>
         <li>학번: 2301003 </li>
         <li>주소: 서울시 중구 </li>
         <li>내가 좋아하는
@@ -30,7 +71,7 @@ table caption {
                 <li>등촌칼국수</li>
             </ul>
         </li>
-    </ol>
+    </ol></div>
 <hr>
 <h3>😇시간표</h3>
 <table border="1">
@@ -48,7 +89,6 @@ table caption {
 		<tr><td>웹프로그램</td><td>15시-16시</td></tr>
 	</tbody>	
 </table>
-<img src="HS.jpg" alt="한성대로고" width="200" height="200">
 <hr>
 <a href="b.html">회원가입</a>
 </body>
