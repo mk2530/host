@@ -5,94 +5,148 @@
 <title>자기소개</title>
 <style>
 body {
-   background-color: skyblue; 
-   margin-left: 30px;
-   margin-right: 30px;
+    background-color: skyblue;
+    margin: 30px;
+    font-family: Arial, sans-serif;
 }
 div {
-    background-color : rgb(240, 244, 246);
-    background-size : 400px 400px; /* 수정 */
-    background-image : url("media/spongebob.png");
-    background-repeat : repeat-y;
-    background-position : center center;
+    background-color: rgb(240, 244, 246);
+    background-image: url("media/spongebob.png");
+    background-repeat: repeat-y;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+    color: rgb(243, 23, 195);
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.5;
+    margin: 20px auto;
 }
-div {
-	width : 200px;
-	height : 200px; 
-	color : rgb(243, 23, 195);
-	font-size : 16px;
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
 table caption {
-   color: white; 
+    color: white;
+    font-weight: bold;
 }
-table { /* 이중 테두리 제거 */
-	border-collapse : collapse; 
+td, th {
+    text-align: center;
+    padding: 8px;
+    height: 20px;
 }
-td, th { /* 모든 셀에 적용 */
-	text-align : left;
-	padding : 5px;
-	height : 15px;
-	width : 100px;
+thead, tfoot {
+    background: rgb(3, 64, 143);
+    color: rgb(245, 245, 239);
+    font-weight: bold;
 }
-thead, tfoot { /* <thead>의 모든 셀에 적용 */
-	background : rgb(3, 64, 143);
-	color : rgb(245, 245, 239);
+tbody tr:nth-child(even) {
+    background: aliceblue;
 }
-tbody tr:nth-child(even) { /* 짝수 <tr>에 적용*/
-	background : aliceblue;
-}
-tbody tr:hover { /* 마우스가 올라오면 pink 배경 */
-	background : pink;	
+tbody tr:hover {
+    background: pink;
 }
 @keyframes bomb {
-  from { font-size : 500%;}
-  to { font-size : 100%;}
+    0% { font-size: 200%; }
+    50% { font-size: 150%; color: rgb(243, 23, 195); }
+    100% { font-size: 200%; }
 }
 h3 {
-	animation-name : bomb;
-	animation-duration : 3s;
-	animation-iteration-count : infinite;
+    animation-name: bomb;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    color: rgb(3, 64, 143);
+    text-align: center;
+    margin-top: 20px;
+}
+img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+a {
+    color: rgb(3, 64, 143);
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    color: pink;
 }
 </style>
+<script>
+window.onload = function() {
+    alert(
+        "이벤트 1. onload: 페이지 로드 시 공지사항 알림, 2. onclick: 학과 링크 클릭 시 알림, 3. onclick: 설문 제출 시 알림, 4. onclick: 회원가입 링크 클릭 시 알림과 페이지 열기."
+    );
+};
+</script>
 </head>
 <body>
 <img src="img/김미경.jpg" alt="김미경 사진" width="300" height="300">
- <hr>
- <div>
-     <ol type="A">
-        <li>이름 : 김미경 </li>
-        <li>학과 : <a href="javascript:if(confirm('이동하시겠습니까?')) { window.open('https://futureplus.hansung.ac.kr/ko/department/stroke', '_blank'); }">융합행정학과</a></li>
-        <li>학번: 2301003 </li>
-        <li>주소: 서울시 중구 </li>
-        <li>내가 좋아하는
+<hr>
+<div>
+    <ol type="A">
+        <li>이름: 김미경</li>
+        <li>학과: 
+            <a href="https://futureplus.hansung.ac.kr/ko/department/stroke" target="_blank" 
+               onclick="alert('학과 홈페이지로 이동합니다!')">융합행정학과</a>
+        </li>
+        <li>학번: 2301003</li>
+        <li>주소: 서울시 중구</li>
+        <li>하는 일: 식품제조회사 경영관리팀원</li>
+        <li>I like~
             <ul>
-                <li>영화보기🎞️</li>
-                <li>야구보기⚾</li>
-                <li><b>!!놀기만하기!!</b></li>
-                <li>등촌칼국수</li>
+                <li>영화보기 🎞️</li>
+                <li>야구보기 ⚾</li>
+                <li>🏖️ 여름에 먹는 냉면과 수박</li>
+                <li>☃️ 겨울에 먹는 등촌칼국수</li>
             </ul>
         </li>
     </ol>
- </div>
+</div>
 <hr>
-<h3>😇시간표</h3>
+<form>
+    <label>당신도 좋아하나요? :</label><br>
+    <input type="checkbox" name="food" value="냉면"> 냉면<br>
+    <input type="checkbox" name="food" value="수박"> 수박<br>
+    <input type="checkbox" name="food" value="칼국수"> 칼국수<br>
+    <input type="checkbox" name="food" value="딸기"> 딸기<br><br>
+
+    <label>좋아하는 계절은?:</label><br>
+    <input type="radio" name="season" value="spring"> 봄<br>
+    <input type="radio" name="season" value="summer"> 여름<br>
+    <input type="radio" name="season" value="fall"> 가을<br>
+    <input type="radio" name="season" value="winter"> 겨울<br><br>
+
+    <label>당신의 인생여행지는?:</label><br>
+    <input type="text" name="introduction" placeholder="당신의 인생여행지를 공유해주세요!"><br><br>
+
+    <input type="submit" value="제출" onclick="alert('설문이 제출되었습니다!');">
+</form>
+<hr>
+<h3>😇 시간표</h3>
 <table border="1">
-	<caption>2학기 시간표</caption>
-	<thead>
-		<tr><th>과목</th><th>시간</th></tr>
-	</thead>
-	<tfoot>
-		<tr><th>총 4과목</th><th>총 5시간</th></tr>
-	</tfoot>
-	<tbody>
-		<tr><td>데이터사이언스기초</td><td>9시-10시</td></tr>
-		<tr><td>AI수학기초</td><td>10시-11시</td></tr>
-		<tr><td>c언어</td><td>13시-15시</td></tr>
-		<tr><td>웹프로그램</td><td>15시-16시</td></tr>
-	</tbody>	
+    <caption>2학기 시간표</caption>
+    <thead>
+        <tr><th>과목</th><th>시간</th></tr>
+    </thead>
+    <tfoot>
+        <tr><th>총 4과목</th><th>총 5시간</th></tr>
+    </tfoot>
+    <tbody>
+        <tr><td>데이터사이언스기초</td><td>9시 - 10시</td></tr>
+        <tr><td>AI수학기초</td><td>10시 - 11시</td></tr>
+        <tr><td>C언어</td><td>13시 - 15시</td></tr>
+        <tr><td>웹프로그램</td><td>15시 - 16시</td></tr>
+    </tbody>    
 </table>
 <hr>
 <img src="img/HS.jpg" alt="한성부기" width="100" height="100">
-<a href="javascript:void(0)" onclick="window.open('b.html', '_blank')">회원가입</a>
+<a href="javascript:void(0)" onclick="alert('회원가입 페이지로 이동합니다!'); window.open('b.html', '_blank')">회원가입</a>
+<hr>
 </body>
 </html>
